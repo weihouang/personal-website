@@ -102,16 +102,10 @@ const DownArrow: React.FC = () => {
       animate={{ y: [0, -10, 0], opacity: 1 }}
       transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
     >
-      <Text
-        position={[0, -20, 0]} // Adjust position as needed
-        fontSize={2}
-        color="#ffffff"
-        anchorX="center"
-        anchorY="middle"
-      >
-        ↓
-        <meshStandardMaterial attach="material" side={THREE.DoubleSide} />
-      </Text>
+      <mesh position={[0, -20, 0]} rotation={[0, 0, 0]}>
+        <cylinderGeometry args={[0.5, 0, 2, 32]} />
+        <meshStandardMaterial color="#ffffff" />
+      </mesh>
     </motion.group>
   );
 };
